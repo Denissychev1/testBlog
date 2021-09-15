@@ -15,6 +15,11 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {MatOptionModule} from "@angular/material/core";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatIconModule} from "@angular/material/icon";
+import {MatTooltipModule} from "@angular/material/tooltip";
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
+import {MatDividerModule} from "@angular/material/divider";
 
 @NgModule({
   declarations: [
@@ -25,9 +30,10 @@ import {MatOptionModule} from "@angular/material/core";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FontAwesomeModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatCardModule, MatDialogModule, MatButtonModule, MatFormFieldModule, ReactiveFormsModule, MatInputModule, MatSelectModule, MatOptionModule
+    MatCardModule, MatDialogModule, MatButtonModule, MatFormFieldModule, ReactiveFormsModule, MatInputModule, MatSelectModule, MatOptionModule, MatCheckboxModule, MatIconModule, MatTooltipModule, MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

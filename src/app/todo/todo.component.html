@@ -1,25 +1,31 @@
+<div>
 <form [formGroup]="toDoForm" class="form">
+  <mat-card-title>Новая задача</mat-card-title>
+
   <div class="row">
     <div class="col">
       <mat-form-field appearance="fill">
-        <mat-label>Название:</mat-label>
+        <mat-label>Название задачи</mat-label>
+        <input matInput formControlName="text">
+      </mat-form-field>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Категория:</mat-label>
         <mat-select formControlName="title_id">
-          <mat-option *ngFor="let sel of select"  [value]="sel.id">{{sel.text}}</mat-option>
+          <mat-option *ngFor="let sel of select" [value]="sel.id">{{sel.text}}</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
   </div>
   <div class="row">
-    <div class="col">
-      <mat-form-field appearance="fill">
-        <mat-label>Содержание</mat-label>
-        <textarea matInput formControlName="text"></textarea>
-      </mat-form-field>
-
-    </div>
+    <button mat-raised-button id="qwe" (click)="closeDialog(false)">Закрыть</button>
   </div>
-
-  <button mat-button color="primary" (click)="closeDialog(false)">Закрыть</button>
-  <button mat-button color="primary" (click)="closeDialog(true)">Сохранить</button>
-
+  <div class="row">
+    <button mat-raised-button color="primary" (click)="closeDialog(true)">Сохранить</button>
+  </div>
 </form>
+</div>

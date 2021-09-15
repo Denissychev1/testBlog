@@ -16,22 +16,25 @@ export class ProjectService {
     let endpoint = this.API_URL + path
     return this.http.get<any>(endpoint);
   };
+
   getToDoList(path: string): Observable<any> {
     let endpoint = this.API_URL + path
     return this.http.get<any>(endpoint);
   }
- postToDo(body: object) {
+
+  postToDo(body: object) {
     const path = '/todos';
     let endpoint = this.API_URL + path
     return this.http.post(endpoint, body)
   }
 
-  updateToDo(id: number) {
+  updateToDo(id: number, body?: any) {
     const path = '/todos';
+    const qwe = {checked: body}
     let params = new HttpParams();
     params = params.append('id', id);
-    let endpoint = this.API_URL + path
-    return this.http.put(endpoint, {params: params})
+    let endpoint = this.API_URL + path +`/${id}`
+    return this.http.put(endpoint, qwe)
   }
 
 }

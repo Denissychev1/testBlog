@@ -10,7 +10,6 @@ import {ProjectService} from "../project.service";
   providers: [FormBuilder]
 })
 export class TodoComponent implements OnInit {
-  titleId: number;
   select: any;
   // @ts-ignore
   toDoForm: FormGroup;
@@ -18,7 +17,6 @@ export class TodoComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<TodoComponent>,
               private service: ProjectService,
               private fb: FormBuilder, @Inject(MAT_DIALOG_DATA) public data: any) {
-    this.titleId = data.titleId
   }
 
   ngOnInit(): void {
@@ -38,7 +36,6 @@ export class TodoComponent implements OnInit {
   }
 
   closeDialog(isNew: boolean) {
-
     this.dialogRef.close(isNew ? this.toDoForm.value : null)
   }
 

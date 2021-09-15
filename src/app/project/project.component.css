@@ -1,0 +1,19 @@
+.card-container {
+  margin: 10px;
+}
+.header{
+  height: 85px;
+  align-content: center;
+  background-color: #673ab7;
+}
+.header-text{
+  text-align: center;
+  color: white;
+  margin-top: 7px;
+  font-size: 28px;
+  vertical-align: middle;
+}
+.card{
+
+  background-color: #673ab7;
+}
