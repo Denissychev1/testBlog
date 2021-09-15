@@ -10,7 +10,7 @@ export class ProjectService {
   constructor(private http: HttpClient) {
   }
 
-  API_URL: string = "http://127.0.0.1:3000";
+  API_URL: string = "https://one-more-blog-ruby.herokuapp.com";
 
   getToDoTitles(path: string): Observable<any> {
     let endpoint = this.API_URL + path
