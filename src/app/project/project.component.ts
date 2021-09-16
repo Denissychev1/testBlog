@@ -40,19 +40,19 @@ export class ProjectComponent implements OnInit {
     })
   }
 
-  async refreshTodos() {
-    await this.service.getToDoTitles('/titles').subscribe(data => {
+   refreshTodos() {
+     this.service.getToDoTitles('/titles').subscribe(data => {
       this.titles = data;
-      console.log(data)
-    });
-    await this.service.getToDoList('/todos').subscribe(data => {
-      if (this.titles.length > 0 && data.length > 0) {
-        this.titles.forEach((x: { list: any; id: any; }) => {
-          x.list = data.filter((y: { title_id: any; }) => y.title_id === x.id)
-        })
-      }
-    })
+      console.log(data);
+      this.service.getToDoList('/todos').subscribe(data => {
+        if (this.titles.length > 0 && data.length > 0) {
+          this.titles.forEach((x: { list: any; id: any; }) => {
+            x.list = data.filter((y: { title_id: any; }) => y.title_id === x.id)
+          })
+        }
+      })
 
+    });
   }
 
   checkTodo(id: number, e: boolean) {
